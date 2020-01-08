@@ -1,7 +1,8 @@
-FROM python:3-alpine
+FROM python:3-slim-buster
 
-COPY requirements.txt /
-COPY echo.py /app
+WORKDIR /app
+COPY requirements.txt /app/
+COPY echo.py /app/
 COPY .env.dist /app/.env
 
 RUN pip install -r requirements.txt
